@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nəticə</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Semestr Balı Nəticəsi</h1>
+        <p>Yekun Semestr Balınız: <span th:text="${yekunBal}"></span></p>
+        <p>Qayıb Limiti: <span th:text="${qaliqLimiti}"></span> saat</p>
+        <p>Sizin Qayıb Saatlarınız: <span th:text="${qaliqQayib}"></span> saat</p>
+        <a th:href="@{/}">Yenidən Hesabla</a>        
+    </div>
+</body>
+</html>

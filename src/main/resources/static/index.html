@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semestr Balı Hesablama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Semestr Balı Hesablama</h1>
+        <form action="/hesabla" method="post">
+            <div id="seminarBallariContainer">
+                <label for="seminarBallari1">Seminar Balları:</label>
+                <input type="number" id="seminarBallari1" name="seminarBallari" min="0" max="10" required>
+            </div>
+            <button type="button" onclick="addSeminarField()">Seminar əlavə et</button>
+
+            <div id="kollokviumBallariContainer">
+                <label for="kollokviumBallari1">Kollokvium Balları:</label>
+                <input type="number" id="kollokviumBallari1" name="kollokviumBallari" min="0" max="10" required>
+            </div>
+            <button type="button" onclick="addKollokviumField()">Kollokvium əlavə et</button>
+
+
+            <label for="serbestIsBal">Sərbəst İş Balları:</label>
+            <input type="number" id="serbestIsBal" name="serbestIsBal" min="0" max="10" required>
+
+            <label for="kursIsi">Kurs İşi:</label>
+            <input type="checkbox" id="kursIsi" name="kursIsi">
+
+            <label for="kursIsiBallari">Kurs İşi Balları (əgər varsa):</label>
+            <input type="number" id="kursIsiBallari" name="kursIsiBallari" min="0" max="10">
+
+            <label for="davamiyyet">Davamiyyət (qayıb):</label>
+            <input type="number" id="davamiyyet" name="davamiyyet" required>
+
+            <label for="dersSaati">Dərs saatı:</label>
+            <input type="number" id="dersSaati" name="dersSaati" required>
+
+            <button type="submit">Hesabla</button>
+        </form>
+    </div>
+
+    <script>
+        let seminarCount = 1;
+        let kollokviumCount = 1;
+
+        function addSeminarField() {
+            seminarCount++;
+            const container = document.getElementById('seminarBallariContainer');
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.name = 'seminarBallari';
+            input.min = '0';
+            input.max = '10';
+            input.required = true;
+            container.appendChild(input);
+        }
+
+        function addKollokviumField() {
+            kollokviumCount++;
+            const container = document.getElementById('kollokviumBallariContainer');
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.name = 'kollokviumBallari';
+            input.min = '0';
+            input.max = '10';
+            input.required = true;
+            container.appendChild(input);
+        }
+    </script>
+</body>
+</html>
